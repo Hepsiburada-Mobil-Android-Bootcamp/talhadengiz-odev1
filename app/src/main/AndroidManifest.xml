@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FigmaLiveData">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.vm.LiveDataActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.SigninActivity"
+            android:name=".ui.home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sign.SigninActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

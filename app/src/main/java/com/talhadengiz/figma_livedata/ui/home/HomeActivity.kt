@@ -1,13 +1,18 @@
-package com.talhadengiz.figma_livedata.ui
+package com.talhadengiz.figma_livedata.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.talhadengiz.figma_livedata.R
-import com.talhadengiz.figma_livedata.data.NearestRestaurant
-import com.talhadengiz.figma_livedata.data.PopularMenu
+import com.talhadengiz.figma_livedata.data.model.NearestRestaurant
+import com.talhadengiz.figma_livedata.data.model.PopularMenu
 import com.talhadengiz.figma_livedata.databinding.ActivityHomeBinding
 import com.talhadengiz.figma_livedata.removeStatus
+import com.talhadengiz.figma_livedata.showDialog
+import com.talhadengiz.figma_livedata.ui.home.adapter.NearestRestaurantAdapter
+import com.talhadengiz.figma_livedata.ui.home.adapter.PopularMenuAdapter
+import com.talhadengiz.figma_livedata.ui.vm.LiveDataActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -22,6 +27,18 @@ class HomeActivity : AppCompatActivity() {
 
         initRestaurantRecyclerView()
         initMenuRecyclerView()
+        initClickListener()
+        showDialog(
+            getString(R.string.selam_dostum),
+            getString(R.string.live_data),
+            this
+        )
+    }
+
+    private fun initClickListener() {
+        binding.home.cardview.btnBuyNow.setOnClickListener {
+            startActivity(Intent(this, LiveDataActivity::class.java))
+        }
     }
 
     private fun initRestaurantRecyclerView() {
@@ -30,8 +47,9 @@ class HomeActivity : AppCompatActivity() {
         binding.home.rvNearestRestaurant.adapter = NearestRestaurantAdapter(addRestaurant())
     }
 
-    private fun initMenuRecyclerView(){
-        binding.home.rvPopularMenu.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+    private fun initMenuRecyclerView() {
+        binding.home.rvPopularMenu.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.home.rvPopularMenu.adapter = PopularMenuAdapter(addMenu())
     }
 
@@ -46,10 +64,10 @@ class HomeActivity : AppCompatActivity() {
 
     private fun addMenu(): MutableList<PopularMenu> {
         return mutableListOf(
-            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home","$15"),
-            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home","$16"),
-            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home","$17"),
-            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home","$18")
+            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home", "$15"),
+            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home", "$16"),
+            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home", "$17"),
+            PopularMenu(R.drawable.image_menu, "Green Noddle", "Noddle Home", "$18")
         )
     }
 }

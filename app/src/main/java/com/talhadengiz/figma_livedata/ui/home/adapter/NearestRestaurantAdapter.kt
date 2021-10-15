@@ -1,9 +1,9 @@
-package com.talhadengiz.figma_livedata.ui
+package com.talhadengiz.figma_livedata.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.talhadengiz.figma_livedata.data.NearestRestaurant
+import com.talhadengiz.figma_livedata.data.model.NearestRestaurant
 import com.talhadengiz.figma_livedata.databinding.ItemNearestRestaurantBinding
 
 class NearestRestaurantAdapter(private val nearestRestaurantList: MutableList<NearestRestaurant>) :

@@ -1,4 +1,4 @@
-package com.talhadengiz.figma_livedata.data
+package com.talhadengiz.figma_livedata.data.model
 
 data class NearestRestaurant(
     val restaurantLogo:Int,

@@ -21,13 +21,13 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/space_24</item>
-        <item name="android:background">@drawable/ic_edittext_bg</item>
+        <item name="android:background">@drawable/bg_edittext</item>
     </style>
     <style name="button_login">
         <item name="android:layout_width">@dimen/space_152</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/space_20</item>
-        <item name="android:background">@drawable/ic_edittext_bg</item>
+        <item name="android:background">@drawable/bg_edittext</item>
         <item name="android:drawablePadding">@dimen/space_8</item>
         <item name="android:padding">@dimen/space_24</item>
     </style>

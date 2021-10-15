@@ -1,9 +1,9 @@
-package com.talhadengiz.figma_livedata.ui
+package com.talhadengiz.figma_livedata.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.talhadengiz.figma_livedata.data.PopularMenu
+import com.talhadengiz.figma_livedata.data.model.PopularMenu
 import com.talhadengiz.figma_livedata.databinding.ItemPopularMenuBinding
 
 class PopularMenuAdapter(private val menuList: MutableList<PopularMenu>) :
